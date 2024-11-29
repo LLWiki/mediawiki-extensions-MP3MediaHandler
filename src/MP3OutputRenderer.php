@@ -27,10 +27,9 @@ class MP3OutputRenderer extends MediaTransformOutput {
 	 * @return string
 	 */
 	public function toHtml( $options = [] ) {
-		$Output = '<audio controls="controls">'
+		$Output = '<audio preload="metadata" controls="controls">'
 				. '<source src="$1" type="audio/mp3" />'
-				. $this->getFlashPlayerHTMLTemplate( '<a href="$1">$2</a>',
-													 $this->pSourceFileURL )
+				. $this->getFlashPlayerHTMLTemplate( '<a href="$1">$2</a>', $this->pSourceFileURL )
 				. '</audio>';
 
 		$Args = [
